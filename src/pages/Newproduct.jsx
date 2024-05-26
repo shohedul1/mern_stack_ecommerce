@@ -38,7 +38,7 @@ const Newproduct = () => {
 
     if (name && image && category && price) {
       try {
-        const fetchData = await fetch(`${import.meta.env.VITE_APP_SERVER_DOMIN}/uploadProduct`, {
+        const fetchData = await fetch(`${import.meta.env.VITE_APP_SERVER_DOMIN}/product`, {
           method: "POST",
           headers: {
             "content-type": "application/json"
