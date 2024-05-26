@@ -25,7 +25,7 @@ const Cart = () => {
     if (user.email) {
       try {
         const stripe = await loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
-        const res = await fetch(`${import.meta.env.VITE_APP_SERVER_DOMIN}/create-checkout-session`, {
+        const res = await fetch("https://mern-stack-ecommerce-api-pys8.onrender.com/create-checkout-session", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -63,7 +63,7 @@ const Cart = () => {
       <h2 className="text-lg md:text-2xl font-bold text-slate-600">Your Cart Items</h2>
 
       {productCartItem[0] ? (
-        <div className="my-4 flex gap-3">
+        <div className="my-4 flex md:flex-row flex-col gap-3">
           <div className="w-full max-w-3xl ">
             {productCartItem.map((el) => (
               <CartProduct
